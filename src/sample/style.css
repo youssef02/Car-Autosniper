@@ -1,0 +1,21 @@
+
+#loginbutton {
+    -fx-text-fill: white;
+    -fx-background-color: radial-gradient(center 50% 50%, radius 100%, darkblue, darkblue, blue)
+}
+#loginbutton:pressed
+{
+    -fx-text-fill: white;
+     -fx-background-color: radial-gradient(center 50% 50%, radius 100%, black, black, black)
+ }
+
+#saf
+{
+-fx-text-fill: white;
+    -fx-background-color: radial-gradient(center 50% 50%, radius 100%, darkblue, darkblue, blue)
+}
+#saf:pressed{
+-fx-text-fill: white;
+    -fx-background-color: radial-gradient(center 50% 50%, radius 100%, black, black, black)
+
+}

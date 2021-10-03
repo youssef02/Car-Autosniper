@@ -1,0 +1,62 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+<VBox fx:controller="sample.MainController"
+      xmlns:fx="http://javafx.com/fxml"  >
+
+
+    <MenuBar fx:id="MainMenu"  >
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="Quit" onAction="#handle" />
+                </items>
+
+            </Menu>
+            <Menu text="About" onAction="#about"/>
+        </menus>
+
+    </MenuBar>
+    <GridPane alignment="CENTER" hgap="20" vgap="20">
+        <padding><Insets top="25" right="25" bottom="25" left="25"/>
+
+        </padding>
+
+        <Text id="welcome-text" text="Welcome"
+              GridPane.columnIndex="0" GridPane.rowIndex="0"
+              GridPane.columnSpan="2"/>
+
+        <Label text="User Name:"
+               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+        <TextField fx:id="UsernameField"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Password:"
+               GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+        <PasswordField fx:id="PasswordField"
+                       GridPane.columnIndex="1" GridPane.rowIndex="2" onKeyPressed="#handlekey"/>
+
+        <HBox spacing="10" alignment="bottom_right"
+              GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button text="Sign In" fx:id="loginbutton"
+                    onAction="#handleSubmitButtonAction"/>
+        </HBox>
+
+        <Label fx:id="Message"
+               GridPane.columnIndex="1" GridPane.rowIndex="3"
+               visible="false"/>
+
+
+        <stylesheets>
+            <URL value="@style.css" />
+        </stylesheets>
+    </GridPane>
+
+
+
+
+</VBox>

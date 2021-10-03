@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<VBox  xmlns:fx="http://javafx.com/fxml" >
+    <TabPane tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Filter Options">
+            <VBox>
+                <VBox VBox.vgrow="ALWAYS" minHeight="500">
+                    <GridPane prefWidth="750" hgap="10" vgap="10" >
+
+                        <fx:define>
+                            <ColumnConstraints fx:id="colConstraints" percentWidth="50"/>
+                        </fx:define>
+
+                        <columnConstraints>
+
+                            <fx:reference source="colConstraints"/>
+                            <fx:reference source="colConstraints"/>
+                            <fx:reference source="colConstraints"/>
+                            <fx:reference source="colConstraints"/>
+
+                        </columnConstraints>
+                        <padding>
+                            <Insets top="25" right="25" bottom="25" left="25"/>
+                        </padding>
+
+                        <Label text="Filter Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="fname"  GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
+                        <Label text="Brand:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <ComboBox fx:id="BrandCombobox"  maxWidth="250"  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label text="Fuel Type:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="FuelTYpeCombobox" maxWidth="Infinity" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+                        <Label text="Millage "  GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" spacing="10">
+                            <TextField fx:id="millagemin" promptText="Min"/>
+                            <TextField fx:id="millagemax" promptText="Max" />
+
+                        </HBox>
+                        <Label text="Power "  GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <HBox GridPane.columnIndex="3" GridPane.rowIndex="2" spacing="10">
+                            <TextField fx:id="powermin" promptText="Min"/>
+                            <TextField fx:id="powermax" promptText="Max" />
+
+                        </HBox>
+                        <Label text="First year of Reg."  GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <HBox GridPane.columnIndex="1" GridPane.rowIndex="3" spacing="10">
+                            <TextField fx:id="firstyormin" promptText="Min"/>
+                            <TextField fx:id="firstyormax" promptText="Max" />
+
+                        </HBox>
+                        <Label text="Vehicule Type:" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                        <ComboBox fx:id="VeHicleTYpeCombobox"  maxWidth="Infinity" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+                        <Label text="Numbers of Doors" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                        <ComboBox fx:id="DoOrNumCombobox" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+
+                    </GridPane>
+                </VBox>
+
+                <VBox VBox.vgrow="ALWAYS">
+                    <HBox alignment="BOTTOM_RIGHT" spacing="20">
+                        <padding>
+                            <Insets top="25" right="25" bottom="25" left="25"/>
+                        </padding>
+                        <Button fx:id="Save" text="Save" />
+                        <Button  fx:id="saveandfilter" text="Save and Filter"/>
+                    </HBox>
+                </VBox>
+
+                <stylesheets>
+                    <URL value="@./../style.css"/>
+                </stylesheets>
+            </VBox>
+        </Tab>
+        <stylesheets>
+            <URL value="@style.css" />
+        </stylesheets>
+    </TabPane>
+
+</VBox>

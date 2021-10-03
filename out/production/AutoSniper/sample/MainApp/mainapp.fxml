@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<VBox fx:controller="sample.MainApp.MainAppController"
+      xmlns:fx="http://javafx.com/fxml" >
+
+    <MenuBar fx:id="MainMenu" >
+        <menus>
+            <Menu text="File">
+                <items>
+                    <MenuItem text="New DataBase"/>
+                    <MenuItem text="Load DataBase" />
+                    <MenuItem text="Update Database" />
+                    <MenuItem text="Settings"  />
+                    <MenuItem text="Quit" onAction="#quit" />
+                </items>
+
+            </Menu>
+            <Menu text="Filter">
+                <items>
+                    <MenuItem text="New Filter" onAction="#NewFilter"/>
+                    <MenuItem text="My Filters"/>
+                </items>
+            </Menu>
+            <Menu text="Watchlist">
+                <items>
+                    <MenuItem text="New Watchlist"/>
+                    <MenuItem text="My Watchlist"/>
+                </items>
+            </Menu>
+
+            <Menu text="About">
+                <items>
+                    <MenuItem text="Software"/>
+                    <MenuItem text="Subscription"/>
+                </items>
+            </Menu>
+
+
+
+        </menus>
+
+    </MenuBar>
+    <HBox>
+        <ToolBar orientation="VERTICAL">
+            <Button onAction="#DatabaseBtn" text="Database"/>
+        </ToolBar>
+
+        <TableView HBox.hgrow="ALWAYS" fx:id="CarView" >
+            <placeholder>
+                <VBox alignment="CENTER">
+                    <Label text="No Filter added or No data yet&#10; "/>
+                    <HBox alignment="CENTER">
+                        <Label text="Please add  "/>
+                        <Button text="New Filter" onAction="#NewFilter"/>
+                    </HBox>
+
+                </VBox>
+
+            </placeholder>
+            <columnResizePolicy><TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="image" text="Image" >
+                </TableColumn>
+            </columns>
+
+        </TableView>
+        <VBox fx:id="sidebox" HBox.hgrow="ALWAYS">
+            <AnchorPane fx:id="Anchorside">
+                <TabPane fx:id="tabPane"  xmlns="http://javafx.com/javafx/8.0.40" AnchorPane.topAnchor="5" AnchorPane.rightAnchor="5" AnchorPane.leftAnchor="5"
+                         xmlns:fx="http://www.w3.org/2001/XInclude" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab fx:id="fooTabPage"  text="Filter options" >
+                            <VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" >
+                                <Label text="Filter:" />
+                                <HBox VBox.vgrow="ALWAYS" >
+
+
+                                    <GridPane HBox.hgrow="ALWAYS" hgap="100" vgap="100" >
+                                        <padding><Insets top="25" right="25" bottom="25" left="25"/>
+
+                                        </padding>
+                                        <Label fx:id="f_cm" text="Car Model:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                        <Label fx:id="f_f" text="Filter:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                        <Label fx:id="f_c" text="Color:" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                                        <Label fx:id="f_d" text="Date:" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                                    </GridPane>
+                                </HBox>
+
+                                <TableView  fx:id="FilterView">
+                                    <placeholder>
+                                        <VBox alignment="CENTER">
+                                            <Label text="No Filter added &#10; "/>
+                                            <HBox alignment="CENTER">
+                                                <Label text="Please add  "/>
+                                                <Button text="New Filter" onAction="#NewFilter"/>
+                                            </HBox>
+
+                                        </VBox>
+
+                                    </placeholder>
+                                    <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+
+                                </TableView>
+                                <HBox HBox.hgrow="ALWAYS">
+                                    <Button fx:id="strbtn" text="Start"  maxWidth="100" HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="delbtn" text="Delete"  maxWidth="100" HBox.hgrow="ALWAYS"/>
+                                    <Button fx:id="edtbtn" text="Edit" maxWidth="100" HBox.hgrow="ALWAYS"/>
+                                    <Label text="Total" maxWidth="100" alignment="CENTER_RIGHT" />
+                                </HBox>
+                            </VBox>
+                        </Tab>
+                        <Tab fx:id="barTabPage" text="Watchlist options">
+                            <VBox xmlns:fx="http://www.w3.org/2001/XInclude">
+                                <Label fx:id="lblText" text="Helllo" />
+                                <Button fx:id="btnBarTab"  text="Change text"/>
+                            </VBox>
+                        </Tab>
+
+                    </tabs>
+                </TabPane>
+                <Button text="HI" onAction="#toggleside"  AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10" />
+            </AnchorPane>
+
+        </VBox>
+
+
+    </HBox>
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+
+</VBox>
